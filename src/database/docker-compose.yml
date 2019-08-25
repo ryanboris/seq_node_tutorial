@@ -1,0 +1,19 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - localpg
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASS=postgres
+      - POSTGRES_DB=postgres
+volumes:
+  postgres:
+networks:
+  localpg:
+    driver: bridge

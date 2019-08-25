@@ -1,9 +1,10 @@
 const Sequelize = require('sequelize')
 
-const sequelize = new Sequelize('testmysql', 'root', '', {
+const pg = 'postgres'
+
+const sequelize = new Sequelize(pg, pg, pg, {
   host: '127.0.0.1',
-  dialect: 'mysql',
-  operatorsAliases: false
+  dialect: 'postgresql'
 })
 
 module.exports = sequelize
