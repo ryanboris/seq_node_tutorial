@@ -28,9 +28,15 @@ router.use((err, req, res, next) => {
   }
 })
 
-app.listen(PORT, err => {
+app.listen(PORT, async err => {
   if (err) {
     return console.log(`Cannot listen on PORT: ${PORT}`)
+  }
+  try {
+    await sequelize.authenticate()
+    console.log('Local pg db has been successfully connected.')
+  } catch (err) {
+    console.error('The local db was not connected.', err)
   }
   console.log(`>>Server is listening on: http://localhost:${PORT}`)
 })
