@@ -1,3 +1,5 @@
+// Require DB connection
+require('./src/database/connection')
 // Simple Express Framework Node Server
 const express = require('express')
 const app = express()
