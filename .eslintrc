@@ -1,0 +1,20 @@
+{
+  "env": {
+    "node": true,
+    "es6": true,
+    "commonjs": true,
+    "jest": true,
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "rules": {
+    "no-unused-vars": 1,
+    "semi": 0,
+    "comma-dangle": 0,
+    "no-console": 0,
+    "no-undef": 1
+  }
+}

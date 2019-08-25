@@ -1,10 +1,10 @@
 // Require DB connection
-require('./src/database/connection')
+const sequelize = require('./src/database/connection')
 // Simple Express Framework Node Server
 const express = require('express')
 const app = express()
 // Port to listen on
-const PORT = 3000
+const PORT = process.env.PORT || 3000
 
 const path = require('path')
 

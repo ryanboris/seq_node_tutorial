@@ -1,11 +1,12 @@
 const Sequelize = require('sequelize')
+const config = require('../../config/config.json')
 
-const pg = 'postgres'
+let dbConfig = ''
 
-const sequelize = new Sequelize(pg, pg, pg, {
-  host: '127.0.0.1',
-  dialect: 'postgres'
-})
+process.env.NODE_ENV
+  ? (dbConfig = config.production)
+  : (dbConfig = config.development)
+
+const sequelize = new Sequelize(dbConfig)
 
 module.exports = sequelize
-global.sequelize = sequelize
